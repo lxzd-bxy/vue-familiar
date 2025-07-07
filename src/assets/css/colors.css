@@ -1,0 +1,6 @@
+@layer base {
+    :root {
+        --fg-color: #2e2b3f;
+        --bg-color: #221f2e;
+    }
+}
