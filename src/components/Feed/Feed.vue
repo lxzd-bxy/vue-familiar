@@ -1,25 +1,51 @@
 <template>
-<div class="col-10 text-light">
-  <form action="" method="POST"
-    class="w-100 color-bg m-auto mb-3 p-3 rounded d-flex justify-content-between align-items-center">
-    <div class="d-flex w-100">
-      <img class="rounded-circle me-3 object-fit-cover" style="height: 50px; width: 50px;" />
-      <input autocomplete="off" type="text" name="post" placeholder="Что у вас нового?"
-        class="inp w-100 color-bg text-light border-0">
-    </div>
-    <button type="submit" class="ms-3 btn div-primary float-end">Отправить</button>
-  </form>
-  <div class="w-100 m-auto overflow-auto" style="height: 75vh;">
-    <div class="w-100 card text-light p-3 mb-3" style="background-color: var(--fg-main);">
-      <div class="d-flex align-items-center">
-      <img class="me-3 rounded-circle object-fit-cover" height="50px" width="50px"/>
+  <div class="w-5/6 text-white">
+    <!-- Post Form -->
+    <form
+      @submit.prevent=""
+      class="w-full bg-[var(--fg-color)] mx-auto mb-4 p-4 rounded flex justify-between items-center"
+    >
+      <div class="flex w-full">
+        <img
+          class="rounded-full me-4 object-cover h-12 w-12"
+          :src="'/images/neutral.png'"
+          alt="User profile"
+        />
+        <input
+          autocomplete="off"
+          type="text"
+          name="post"
+          placeholder="Что у вас нового?"
+          class="w-full text-white bg-[var(--fg-color)] ps-4 border-0 focus:outline-none focus:ring-0 hover:outline-none hover:border-0"
+        />
       </div>
-      <hr>
-      <div>
-      <p class="card-text">
-      </p>
+      <button
+        type="submit"
+        class="ms-4 px-4 py-2 bg-[var(--primary)] text-white rounded float-end"
+      >
+        Отправить
+      </button>
+    </form>
+
+    <!-- Posts List
+    <div class="w-full mx-auto overflow-auto" style="height: 75vh;">
+      <div 
+        class="w-full bg-[var(--fg-color)] text-white p-3 mb-3 rounded"
+      >
+        <div class="flex items-center">
+          <img 
+            class="me-3 rounded-full object-cover h-12 w-12"
+            :src="'/images/neutral.png'"
+          >
+          <h5 class="font-medium">
+          </h5>
+        </div>
+        <hr class="my-2 border-gray-600">
+        <div>
+          <p class="text-gray-200">
+          </p>
+        </div>
       </div>
-    </div>
+    </div> -->
   </div>
-</div>
 </template>

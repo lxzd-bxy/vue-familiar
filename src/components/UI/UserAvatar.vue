@@ -1,16 +1,16 @@
-<script setup>
-import { ref, watch } from 'vue';
+<script setup lang="ts">
+import { ref, watch } from "vue";
 
 const props = defineProps({
   src: String,
   fallback: {
     type: String,
-    default: '/public/images/neutral.png'
+    default: "@//images/neutral.png",
   },
   alt: {
     type: String,
-    default: ''
-  }
+    default: "",
+  },
 });
 
 const actualImage = ref(props.src);
@@ -19,15 +19,14 @@ const setFallback = () => {
   actualImage.value = props.fallback;
 };
 
-watch(() => props.src, (newVal) => {
-  actualImage.value = newVal;
-});
+watch(
+  () => props.src,
+  (newVal) => {
+    actualImage.value = newVal;
+  }
+);
 </script>
 
 <template>
-  <img
-    :src="actualImage"
-    :alt="alt"
-    @error="setFallback"
-  >
+  <img :src="actualImage" :alt="alt" @error="setFallback" />
 </template>
